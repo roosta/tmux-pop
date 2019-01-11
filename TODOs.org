@@ -1,2 +1,0 @@
-* TODO Add option to pop borders
-* TODO Add color option
