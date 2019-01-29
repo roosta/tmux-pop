@@ -12,4 +12,7 @@ tmux_get() {
 
 color="$(tmux_get '@tmux-pop-color' 'brightblack')"
 
-tmux set-hook -g after-select-pane "run-shell '$CURRENT_DIR/scripts/pop.sh $color'"
+#tmux set-hook -g after-select-pane "run-shell '$CURRENT_DIR/scripts/pop.sh $color'"
+tmux set-hook -g window-pane-changed "run-shell '$CURRENT_DIR/scripts/pop.sh $color'"
+tmux set-hook -g session-windows-changed "run-shell '$CURRENT_DIR/scripts/pop.sh $color'"
+tmux set-hook -g client-session-changed "run-shell '$CURRENT_DIR/scripts/pop.sh $color'"
