@@ -11,5 +11,6 @@ tmux_get() {
 }
 
 color="$(tmux_get '@tmux-pop-color' 'brightblack')"
+duration="$(tmux_get '@tmux-pop-duration' 0.05)"
 
-tmux set-hook -g after-select-pane "run-shell '$CURRENT_DIR/scripts/pop.sh $color'"
+tmux set-hook -g after-select-pane "run-shell '$CURRENT_DIR/scripts/pop.sh $color $duration'"
